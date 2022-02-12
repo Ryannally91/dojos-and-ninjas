@@ -1,0 +1,25 @@
+{%extends "layout.html"%}{% block body%}
+
+<h3>{{ dojo.name }} Ninjas</h3>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Age</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for ninja in dojo.ninjas %}
+    <!-- need .ninjas to access the list -->
+    <tr>
+      <td>{{ninja.first_name}}</td>
+      <td>{{ninja.last_name}}</td>
+      <td>{{ninja.age}}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+<a href="/">Home</a>
+{% endblock %}

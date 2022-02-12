@@ -1,0 +1,35 @@
+{%extends "layout.html"%}{% block body%}
+<div class="container mt-5">
+  <div class="row align-items-start">
+    <div class="col">
+      <h2>Add Dojo</h2>
+      <form action="/create_dojo" method="post">
+        <input type="text" name="name" />
+        <input
+          type="submit"
+          name="submit"
+          id="submit_index"
+          class="btn btn-primary"
+        />
+      </form>
+    </div>
+    <div class="col">
+      <table class="table table-hover">
+        <th>
+          <tr>
+            Location
+          </tr>
+        </th>
+        <tbody>
+          {%for dojo in list_dojos%}
+          <tr>
+            <td><a href="/dojo/{{dojo.id}}">{{dojo.name}}</a></td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      <a href="/new_ninja">add ninja</a>
+    </div>
+  </div>
+</div>
+{% endblock %}

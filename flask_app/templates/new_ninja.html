@@ -1,0 +1,42 @@
+{%extends "layout.html"%}{% block body%} 
+
+<h3>New Ninja</h3>
+<div container mt-5>
+<form action="/ninjas/create" method="post" class="add_ninja_form">
+    <select name ="dojo_id" class="form-select" aria-label="Default select example">
+      <!-- "dojo_id" is the key -->
+        {% for dojo in dojos %}
+        <option value="{{dojo.id}}">{{dojo.name}}</option>
+        <!-- dojo.id is the value to the fk,   'dojo_id' : dojo.id -->
+        {% endfor %}
+    <label for="first_name">
+        First Name:</label>
+        <input type="text" name="first_name">
+    
+    <label for="last_name">
+        Last Name:
+        <input type="text" name="last_name">
+    </label>
+    <label for="last_name">
+        Age:
+        <input type="number" name="age">
+    </label>
+    <input type="submit" value="create" >
+</form>
+</div>
+<a href="/">Home</a>
+{% endblock %}
+
+<!-- To make horizontel -->
+<!-- <div class="row mb-3">
+    <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+    <div class="col-sm-10">
+      <input type="email" class="form-control" id="inputEmail3">
+    </div>
+  </div>
+  <div class="row mb-3">
+    <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
+    <div class="col-sm-10">
+      <input type="password" class="form-control" id="inputPassword3">
+    </div>
+  </div> -->

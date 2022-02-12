@@ -1,0 +1,11 @@
+#main {
+  margin-top: 5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.add_ninja_form {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+}
